@@ -2,6 +2,9 @@
 Documentation     Aqui é onde tudo começa
 Library     RequestsLibrary
 
+*Variables*
+${API_URL}     http://marvel.qaninja.academy
+
 *Keywords*
 Set Client Key
   [Arguments]   ${email}
@@ -12,7 +15,7 @@ Set Client Key
 
   # Faz o POST para auttorização:
   ${response}    POST
-  ...   http://marvel.qaninja.academy/accounts
+  ...   ${API_URL}/accounts
   ...   json=${usuario}
 
   # com o resultado, obtém o client_key:
