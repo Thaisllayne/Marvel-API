@@ -8,3 +8,12 @@ def factory_logan():
     "team": "X-men",
     "active": True
   }
+
+def factory_ciclope():
+  return {
+    "name": "Ciclope",
+    "aliases": "Ciclope",
+    "age": 25,
+    "team": "X-men",
+    "active": True
+}
