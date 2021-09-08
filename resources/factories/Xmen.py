@@ -1,5 +1,4 @@
 
-
 def factory_logan():
   return {
     "name": "Logan",

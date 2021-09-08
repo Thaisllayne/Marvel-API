@@ -23,4 +23,4 @@ Não deve encontrar o usuário pelo Id inexistente
     ${personagem_id}     Get Unique Id
 
     ${response}     DELETE Character By Id  ${personagem_id}
-    Status Should Be      404            ${response}
+    Status Should Be      404           ${response}
