@@ -22,3 +22,9 @@ Deve buscar um personagem pelo Id
     Should Be Equal     ${logan.json()}[age]      ${personagem}[age]
     Should Be Equal     ${logan.json()}[team]     ${personagem}[team]
     Should Be Equal     ${logan.json()}[active]   ${personagem}[active]
+
+Não deve retornar o personagem pelo Id
+    ${personagem_id}      Get Unique Id
+
+    ${response}     GET Character By Id  ${personagem_id}
+    Status Should Be      404            ${response}
