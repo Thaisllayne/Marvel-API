@@ -1,20 +1,19 @@
 *Settings*
 Documentation   Suite de Teste do cadastro de personagens na API da Marvel
 Resource    ${EXECDIR}/resources/Base.robot  
-Library   ${EXECDIR}/resources/factories/Thanos.py
-Library   ${EXECDIR}/resources/factories/Deadpool.py
+# Library   ${EXECDIR}/resources/factories/Thanos.py
+# Library   ${EXECDIR}/resources/factories/Deadpool.py
+Library   ${EXECDIR}/resources/factories/Guardians.py
 
 # existem 4 tipos, mas esse sempre vai rodar antes de todos os testes:
-  # é possível rodar várias keywords ao mesmo tempo
-Suite Setup     Run Keywords       Set Client Key    thaisllaynesantana@gmail.com
-...             AND                Back To The Past
+Suite Setup     Super Setup   thaisllaynesantana@gmail.com
 
 *Test Cases*
 Deve cadastrar um personagem
   # para comentar: ctrl + ; 
 
   # monta a massa de teste alvo do cenário. Nesse caso, cadastrar o Thanos:
-  &{personagem}   Factory Thanos
+  &{personagem}   Factory Start Lord
   ${response}   POST New Character  ${personagem}
 
   #status esperado:
@@ -25,7 +24,7 @@ Não deve cadastrar com o mesmo nome
   [tags]      dup
 
   # Dado que Thanos já existe no sistema
-  ${personagem}   Factory Deadpool
+  ${personagem}   Factory Groot
   POST New Character  ${personagem}
 
   # Quando faço uma requisição POST para a rota characters
