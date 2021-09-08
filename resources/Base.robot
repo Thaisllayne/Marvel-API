@@ -1,6 +1,7 @@
 *Settings*
 Documentation     Aqui é onde tudo começa
 Library     RequestsLibrary
+Resource    routes/Characters.robot
 
 *Variables*
 ${API_URL}     http://marvel.qaninja.academy
@@ -26,3 +27,7 @@ Set Client Key
 
   # agora, todo o código tem acesso a variável HEADERS 
   Set Suite Variable    ${HEADERS}
+
+# para apagar a lista de personagens:
+Back To The Past
+  DELETE      ${API_URL}/delorean     headers=${HEADERS}

@@ -1,14 +1,14 @@
 # essa lib gera informações aleatórias
-from faker import Faker
-faker = Faker()
+# from faker import Faker
+# faker = Faker()
 
 #  o factory_thanos é um método que retorna um objeto
 #  é uma super variável 
 def   factory_thanos():
 
     return {
-      	"name": faker.name(),
-        "aliases": "Thanos de X",
+      	"name": "Thanos de Titã",
+        "aliases": "Thanos de Titã",
         "age": 3000,
         "team": "Ordem Negra",
         "active": False
